@@ -1,0 +1,27 @@
+name: GitHub release
+
+on:
+  push:
+    branches:
+      - 'main'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: install docker compose
+      run: . ./env/install.sh
+    
+    - name: flutter version
+      run: . ./env/flutter.version.sh
+
+    - name: build android app file
+      run: . ./env/apk.sh
+
+    - name: Create release
+      run: gh release create v$( date +%Y%m%d%H%M ) ./src/app/build/app/outputs/flutter-apk/app-release.apk
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
