@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
 
-static const appTitle = 'Vicentinos v0.1';
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
+  static const appTitle = 'Drawer Demo';
 
   @override
   Widget build(BuildContext context) {
