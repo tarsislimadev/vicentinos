@@ -1,3 +1,7 @@
+import 'package:flutter/material.dart';
+
 class TextVicentinos extends Text {
-  TextVicentinos(): super('Vicentinos');
+  TextVicentinos() {
+    text = 'Vicentinos';
+  }
 }

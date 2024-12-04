@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import './texts/home.dart';
-import './texts/business.dart';
+import './texts/bussiness.dart';
 import './texts/school.dart';
 import './texts/vicentinos.dart';
 
@@ -27,9 +27,9 @@ class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
       
   static const List<Widget> _widgetOptions = <Widget>[
-    TextHome(),
-    TextBusiness(),
-    TextSchool(),
+    const TextHome(),
+    const TextBusiness(),
+    const TextSchool(),
   ];
 
   void _onItemTapped(int index) {
