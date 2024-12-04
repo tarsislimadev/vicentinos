@@ -42,7 +42,7 @@ class PeopleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-        body: ListBody(children: [
+        body: ListView(children: [
       PersonWidget(name: 'A'),
       PersonWidget(name: 'B'),
       PersonWidget(name: 'C'),
@@ -51,15 +51,7 @@ class PeopleWidget extends StatelessWidget {
   }
 }
 
-class PersonWidget extends StatelessWidget {
-  final String name;
-
-  const PersonWidget({Key? key, this.name = 'person'}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Text('Person: ${name}'),
-    );
-  }
+class PersonWidget extends ListTile {
+  const PersonWidget({String name = 'person', Key? key})
+      : super(key: key, title: const Text('$name'));
 }
