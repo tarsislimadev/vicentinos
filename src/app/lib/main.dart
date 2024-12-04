@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-import './texts/home.dart';
-import './texts/bussiness.dart';
-import './texts/school.dart';
-import './texts/vicentinos.dart';
 
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  // const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -84,4 +80,20 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+}
+
+class TextVicentinos extends Text {
+  TextVicentinos({String text = 'Vicentinos'}): super(text);
+}
+
+class TextSchool extends Text {
+  TextSchool({String text = 'School'}): super(text);
+}
+
+class TextHome extends Text {
+  TextHome({String text = 'Home'}): super(text);
+}
+
+class TextBusiness extends Text {
+  TextBusiness({String text = 'Business'}): super(text);
 }
