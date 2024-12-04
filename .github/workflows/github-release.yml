@@ -10,13 +10,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    
+    - name: checkout
+      uses: actions/checkout@v4
+
     - name: install docker compose
       run: . ./env/apt.install.sh
-    
-    - name: flutter version
-      run: . ./env/flutter.version.sh
 
     - name: build android app file
       run: . ./env/flutter.build.apk.sh
