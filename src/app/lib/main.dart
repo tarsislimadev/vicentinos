@@ -23,9 +23,9 @@ class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
       
   static const List<Widget> _widgetOptions = <Widget>[
-    const TextHome(),
-    const TextBusiness(),
-    const TextSchool(),
+    Text('Home'),
+    Text('Business'),
+    Text('School'),
   ];
 
   void _onItemTapped(int index) {
@@ -36,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: TextVicentinos(),
+        title: const Text('Vicentinos'),
         leading: Builder(
           builder: (context) {
             return IconButton(
@@ -50,9 +50,9 @@ class _MyHomePageState extends State<MyHomePage> {
       drawer: Drawer(
         child: ListView(
           children: [
-            const DrawerHeader(child: TextVicentinos()),
+            const DrawerHeader(child: const Text('Vicentinos')),
             ListTile(
-              title: const TextHome(),
+              title: const Text('Home'),
               selected: _selectedIndex == 0,
               onTap: () {
                 _onItemTapped(0);
@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ListTile(
-              title: const TextBusiness(),
+              title: const Text('Business'),
               selected: _selectedIndex == 1,
               onTap: () {
                 _onItemTapped(1);
@@ -68,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ListTile(
-              title: const TextSchool(),
+              title: const Text('School'),
               selected: _selectedIndex == 2,
               onTap: () {
                 _onItemTapped(2);
@@ -80,20 +80,4 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
-}
-
-class TextVicentinos extends Text {
-  TextVicentinos({String text = 'Vicentinos'}): super(text);
-}
-
-class TextSchool extends Text {
-  TextSchool({String text = 'School'}): super(text);
-}
-
-class TextHome extends Text {
-  TextHome({String text = 'Home'}): super(text);
-}
-
-class TextBusiness extends Text {
-  TextBusiness({String text = 'Business'}): super(text);
 }
