@@ -1,26 +1,24 @@
 import 'package:flutter/material.dart';
+import './texts/home.dart';
+import './texts/business.dart';
+import './texts/school.dart';
+import './texts/vicentinos.dart';
 
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  static const appTitle = 'Vicentinos v0.1';
-
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: appTitle,
-      home: MyHomePage(title: appTitle),
+      title: 'Vicentinos v0.1',
+      home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -42,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: TextVicentinos(),
         leading: Builder(
           builder: (context) {
             return IconButton(
@@ -56,9 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
       drawer: Drawer(
         child: ListView(
           children: [
-            const DrawerHeader(
-              child: Text('Drawer Header'),
-            ),
+            const DrawerHeader(child: TextVicentinos()),
             ListTile(
               title: const TextHome(),
               selected: _selectedIndex == 0,
