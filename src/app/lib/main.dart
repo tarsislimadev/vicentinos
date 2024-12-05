@@ -20,11 +20,11 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
       
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text('Home'),
-    Text('People'),
-    Text('Houses'),
-    Text('Events'),
+  static List<Widget> _widgetOptions = <Widget>[
+    HomePage(),
+    PeoplePage(),
+    HousesPage(),
+    EventsPage(),
   ];
 
   void _onItemTapped(int index) {
@@ -84,6 +84,82 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class HomePage extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: ListView(
+        children: [
+          Text('Home List Item 1'),
+          Text('Home List Item 2'),
+        ],
+      ),
+    );
+  }
+}
+
+class PeoplePage extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => _PeoplePageState();
+}
+
+class _PeoplePageState extends State<PeoplePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: ListView(
+        children: [
+          Text('People List Item 1'),
+          Text('People List Item 2'),
+        ],
+      ),
+    );
+  }
+}
+
+class HousesPage extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => _HousesPageState();
+}
+
+class _HousesPageState extends State<HousesPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: ListView(
+        children: [
+          Text('People List Item 1'),
+          Text('People List Item 2'),
+        ],
+      ),
+    );
+  }
+}
+
+class EventsPage extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => _EventsPageState();
+}
+
+class _EventsPageState extends State<EventsPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: ListView(
+        children: [
+          Text('Events List Item 1'),
+          Text('Events List Item 2'),
+        ],
       ),
     );
   }
