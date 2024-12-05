@@ -22,8 +22,9 @@ class _MyHomePageState extends State<MyHomePage> {
       
   static const List<Widget> _widgetOptions = <Widget>[
     Text('Home'),
-    Text('Business'),
-    Text('School'),
+    Text('People'),
+    Text('Houses'),
+    Text('Events'),
   ];
 
   void _onItemTapped(int index) {
@@ -48,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
       drawer: Drawer(
         child: ListView(
           children: [
-            const DrawerHeader(child: const Text('Vicentinos')),
+            const DrawerHeader(child: const Text('Vicentinos v0.1')),
             ListTile(
               title: const Text('Home'),
               selected: _selectedIndex == 0,
@@ -58,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ListTile(
-              title: const Text('Business'),
+              title: const Text('People'),
               selected: _selectedIndex == 1,
               onTap: () {
                 _onItemTapped(1);
@@ -66,10 +67,18 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ListTile(
-              title: const Text('School'),
+              title: const Text('Houses'),
               selected: _selectedIndex == 2,
               onTap: () {
                 _onItemTapped(2);
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Events'),
+              selected: _selectedIndex == 3,
+              onTap: () {
+                _onItemTapped(3);
                 Navigator.pop(context);
               },
             ),
