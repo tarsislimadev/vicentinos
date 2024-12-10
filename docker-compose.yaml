@@ -1,5 +1,11 @@
 services:
+
   app:
     build: './src/app'
     volumes:
       - './src/app:/app'
+
+  server:
+    build: './src/server'
+    volumes:
+      - './src/server:/app'
